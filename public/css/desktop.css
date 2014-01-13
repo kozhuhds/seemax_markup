@@ -1299,8 +1299,6 @@ body {
 }
 	.bigFotot__model img {		
 		vertical-align:bottom;
-		height:416px;
-		width:660px;
 	}
 .previewBox {
 	height:135px;
@@ -1308,6 +1306,8 @@ body {
 	overflow:hidden;
 	margin: 60px 0 0;
 	padding: 0 55px 0;
+	width: 515px;
+
 }
 	.previewBox .prev_ar {
 		position:absolute;
@@ -2283,6 +2283,6 @@ body {
 				background: #1183b8;
 			}
 .loader{display: none;}
-.fotoBox__model .caroufredsel_wrapper{height: 421px !important}
+.fotoBox__model .caroufredsel_wrapper{height: 421px !important;width: 662px !important;}
 .loader a.pre-cur {background-position: 0 -21px;}
 .loader a{cursor: default;}

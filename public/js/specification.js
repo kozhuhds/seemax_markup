@@ -4,6 +4,7 @@ $(document).ready(function(){
      $('.visualModel__box').each(function(){
 
         var _this = $(this);
+        //console.log(_this);
 
         $('.preview__item', _this).each(function(i){
             
@@ -12,14 +13,14 @@ $(document).ready(function(){
 
 
             $(this).click(function(){
-                $('.previewBox__i', _this).trigger('slideTo', $(this).attr('item-id') - 1 );
-
+            	console.log(this);
+                $('.previewBox__i', _this).trigger('slideTo', $(this).attr('item-id'));
                 return false;
             });
         });
 
 
-        $('.bigFotot__model img').each(function (i) {
+        $('.bigFotot__model a img').each(function (i) {
             $(this).attr('item-id', i);
         });
 
@@ -46,7 +47,6 @@ $(document).ready(function(){
                     
                     // Slide the big carousel to the same item-id
                     $('.bigFotot__model').trigger('slideTo', parseInt(itemId)  );
-                    console.log(itemId);
                 }
             }, 
             items: {
