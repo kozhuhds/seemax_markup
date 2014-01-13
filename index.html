@@ -5,14 +5,14 @@
 	<title>see:max</title>
 	<link rel="stylesheet" type="text/css" href="public/css/desktop.css">
 	<link rel="stylesheet" type="text/css" href="public/css/lib/default.css">
+	<link rel="stylesheet" type="text/css" href="public/css/media-queries.css">
 
         <script type="text/javascript" src="public/js/lib/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="public/js/main.js"></script>
 
 </head>
 <body>
-	<div class="page">
-		<div class="header">
+	<div class="header">
 			<div class="headerBord">
 				<div class="header__bord bord_p"></div><!--footer__bord bord_p-->
 				<div class="header__bord bord_b"></div><!--footer__bord bord_b-->
@@ -51,7 +51,7 @@
 						<ul>
 							<li><a href="#">О компании</a></li>
 							<li><a href="#">Магазин</a></li>
-							<li><a href="#">Продукция</a></li>
+							<li class="with-sub"><a href="#">Продукция</a></li>
 							<li><a href="#">Поддержка</a></li>
 							<li><a href="#">Партнёрам</a></li>
 							<li><a href="#">Где купить?</a></li>
@@ -76,6 +76,7 @@
 				</div>
 			</div><!--mainMenu__add-->
 		</div><!--header-->
+	<div class="page">
 		<div class="centralPage">
 			<div class="sliderBox">
 				<div class="slider__i slider_bg_1">
@@ -113,7 +114,7 @@
 				</div><!--slider__i-->
 
 				<div class="slider__nav">
-					<div class="nav__i cur">
+					<div class="nav__i cur" slide="1">
 						<div class="nav__img">
 							<div class="boxImg">
 								<img src="public/i/img/minipic2.jpg" alt="">
@@ -123,7 +124,7 @@
 							Выиграйте навигатор <br />SeeMax E500
 						</div><!--nav__title-->
 					</div><!--nav__i-->
-					<div class="nav__i">
+					<div class="nav__i" slide="2">
 						<div class="nav__img">
 							<div class="boxImg">
 								<img src="public/i/img/minipic.jpg" alt="">
@@ -133,7 +134,7 @@
 							Две новые модели <br />видеорегистраторов
 						</div><!--nav__title-->
 					</div><!--nav__i-->
-					<div class="nav__i">
+					<div class="nav__i" slide="3">
 						<div class="nav__title">
 							Навигаторы GPS Navi: <br />E410, E510 Lite
 						</div><!--nav__title-->

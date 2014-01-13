@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-    
     /* Показать/Спрятать поиск */
     $(".search i").click(function(){
          $(".header__search").show();
@@ -31,6 +29,7 @@ $(document).ready(function(){
     var sliderInterval = 5000;
     var sliderElementsNum = $('.slider__i').children().length;
     var sliderActive = 1;
+    var animationEnd = true;
 
     
     // Animate nav images: zoom in/out
@@ -57,51 +56,63 @@ $(document).ready(function(){
 
 
     // Timer
-    window.setInterval(function () {
+    var sliderMove = function () {
         
         // Hide previous slide
-        $('.slider_bg_' + String(sliderActive) ).hide();
-
-        // Previous navigation item handling
+        $('.slider_bg_' + String(sliderActive) ).fadeOut("fast", function(){
+            $('.slider_bg_' + String(sliderActive) ).fadeIn("fast");   
+        }); 
+            // Previous navigation item handling
         var navObj = $('.slider__nav .nav__i:nth-child(' + String(sliderActive) + ')');
         navObj.removeClass('cur');
 
-        if ( !navObj.hasClass('mouse_over') )
-        {
+        if ( !navObj.hasClass('mouse_over') ){
             navZoomOut(navObj);
         }
 
         // Calculate the next slide id
         sliderActive++;
-        if (sliderActive > sliderElementsNum)
-        {
+        if (sliderActive > sliderElementsNum){
             sliderActive = 1;
         }
-
-        // Show the next slide
-        $('.slider_bg_' + String(sliderActive) ).show();
-
+        
         // The next navigation item handling
         var navObj = $('.slider__nav .nav__i:nth-child(' + String(sliderActive) + ')');
         navObj.addClass('cur');
 
-        if ( !navObj.hasClass('mouse_over') )
-        {
+        if ( !navObj.hasClass('mouse_over') ){
             navZoomIn(navObj);
-        }        
+        }    
+    }
 
-        // /Switch slides and navigation items
-    }, sliderInterval);
+    var sliderIntervalID = setInterval(sliderMove, sliderInterval);
+
 
 
     // Mouse interaction with navigation toolbar
+    $(".sliderBox").hover(
+        function() {clearInterval(sliderIntervalID);},
+        function() {sliderIntervalID = setInterval(sliderMove, sliderInterval);}
+    );
 
     $('.nav__i').on('mouseover', function() {
+        var toSlideNumber = parseInt($(this).attr("slide"));
         $(this).addClass('mouse_over');
-
         if ( !$(this).hasClass('cur') )
         {
             navZoomIn( $(this) );
+            navZoomOut($('.cur'));
+            $('.cur').removeClass('cur');
+            $(this).addClass("cur");
+        }
+        if (sliderActive != toSlideNumber && animationEnd){
+            animationEnd = false;
+            $('.slider_bg_' + String(sliderActive) ).fadeOut("fast", function(){
+                $('.slider_bg_' + String(toSlideNumber)).fadeIn("fast", function(){
+                    sliderActive = toSlideNumber;
+                    animationEnd = true;
+                });
+            });
         }
     });
 
@@ -237,92 +248,44 @@ $(document).ready(function(){
         })
     });
 
-     //speciffication
-
-     $('.visualModel__box').each(function(){
-
-        var _this = $(this);
-
-        $('.preview__item', _this).each(function(i){
-            
-            // Set an additional attribute for items
-            $(this).attr('item-id', i);
 
 
-            $(this).click(function(){
-                $('.previewBox__i', _this).trigger('slideTo', $(this).attr('item-id') - 1 );
+    //Parallax
+    $(window).scroll(function() {
+        var scrollTop = $(window).scrollTop();
+        var offset = (scrollTop-300)/5;
+        if (offset < 20 && scrollTop >= 300){
+            $('.linkSlide img').css('margin-top', -offset );
+            $('.nav__i .boxImg').css('top', -offset);
+            $('.nav__i.cur .boxImg').css('top', -offset - 96);
 
-                return false;
-            });
-        });
-
-
-        $('.bigFotot__model img').each(function (i) {
-            $(this).attr('item-id', i);
-        });
-
-
-        $('.previewBox__i', _this).carouFredSel({
-            responsive: false,
-            circular: true,
-            infinite: false,
-            prev: $('.prev_ar.ar_l', _this),
-            next: $('.prev_ar.ar_r', _this),
-            width: 546,//'546',
-            height: 135,//'125',
-            align: 'center',
-            auto: {
-                play: false
-            },
-            scroll: {
-                items:1,
-                onAfter: function () {
-
-                    // Get item-id value of selected item
-                    var itemId = $('.preview__item:eq(1)').attr('item-id');
-                    console.log(itemId);
-                    
-                    // Slide the big carousel to the same item-id
-                    $('.bigFotot__model').trigger('slideTo', parseInt(itemId)  );
-                    console.log(itemId);
-                }
-            }, 
-            items: {
-                visible: 3
-            }
-        });
-
-
-        var _this = $(this);
-        $('.bigFotot__model', _this).carouFredSel({
-            responsive: false,
-            circular: true,
-            infinite: false,
-            width: '660',
-            align: 'center',
-            auto: {
-                play: false
-            },
-            scroll: {
-                items:1,
-                fx: 'crossfade',
-                onAfter: function () {
-                    $('.bigFotot__model').css('visibility', 'visible');
-                }
-            }, 
-            items: {
-                visible: 1
-            },
-            onCreate: function() {
-                $(this).trigger('slideTo', 1);
-            }
-        });
-        // Sticky files panel
-    var filesPanelBottomOffset = $(document).height() - $('.prodSpecification').position().top - $('.prodSpecification').height() - 50;
-    $.lockfixed('.boxFiles', {offset: {top: 20, bottom: filesPanelBottomOffset }});
-
-
+        }
     });
+
+    //Main menu add events
+    if ($('.mainMenu__add').css('display') == 'none'){
+        $('.with-sub').on('mouseover',function (){
+            $('.mainMenu__add').fadeIn("fast");
+        });
+        $('.mainMenu ul li').on('mouseover', function(){
+            if(!this.hasAttribute("class")){
+                $('.mainMenu__add').fadeOut("fast");
+            }
+        });
+
+        $('.mainMenu__add').on('mouseleave',function (){
+            $('.mainMenu__add').fadeOut("fast");
+        });
+    }
+
+    //Choose region
+    $('.region span i').on('mouseover', function (){
+        $('.region a').show();
+    });
+    $('.region').on('mouseleave', function (){
+        $('.region a').hide();
+    });
+
 
 
 

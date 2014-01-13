@@ -53,10 +53,11 @@
 
 body {
 	background:#fff;
-	min-width:1480px;
 }
 .page {
-	min-width: 1280px;
+	max-width: 1280px;
+	min-width: 800px;
+	margin: 0 auto;
 }
 
 /*=========page==========*/
@@ -67,14 +68,14 @@ body {
 .header {
 	position:relative;
 }
-	.header__i {
-		width:1280px;
-		position:relative;
-		height:91px;
-		margin:0 auto;
-		
-		
-		}
+.header__i {
+	min-width: 800px;
+	max-width:1280px;
+	position:relative;
+	height:91px;
+	margin:0 auto;
+	padding: 0 40px;
+}
 
 /*header__bord*/
 
@@ -211,7 +212,7 @@ body {
 	z-index:850;
 }
 .header__searchI {
-	width:1280px;
+	max-width:1280px;
 	position:relative;
 	height:91px;
 	margin:0 auto;
@@ -397,10 +398,6 @@ body {
 
 .footer__i {
 	height:90px;
-	width:1280px;
-	margin:0 auto;
-	
-	
 	}
 .social_f {
 	float:left;
@@ -432,11 +429,8 @@ body {
 	float:right;
 	font:18px/20px Arial, sans-serif;
 	color:#000;
-	padding: 25px 25px 0 0;
+	margin: 25px 25px 0 0;
 }
-	.region:hover a {
-		display:inline;
-	}
 	.region a {
 		display:none;
 		font:18px/20px Arial, sans-serif;
@@ -461,21 +455,13 @@ body {
 		.region .uk i {
 			background-position:0 -88px;
 		}
-/*==========centralPage
-=======================*/
-
-.centralPage {
-	width: 1280px;
-	margin:0 auto;
-	
-	
-}
 
 /*=====sliderBox
 =================*/
-
+.linkSlide img{
+	width: 100%;
+}
 .sliderBox {
-	margin:9px -100px 0;
 	background: url(../i/grad.png) repeat-y 0 0;
 }
 
@@ -554,21 +540,21 @@ body {
 /*slider__nav*/
 .slider__nav {
 	height:97px;
-	margin:0 100px;
 	padding: 25px 0 30px 0;
 }
 	.nav__i {
 		position:relative;
 		float:left;
 		background:url(../i/dotted.png) repeat-y 0 0;
-		padding:0 0 15px 59px;
-		margin:0 0 0 47px;
+		padding: 0 0 15px 2%;
+		margin: 0 0 0 3%;
 		cursor:default;
 		cursor:pointer;
+		width: 29%;
 	}
 		.nav__i:first-child {
 			background:none;
-			padding: 0px 0 0 34px;
+			padding: 0px 0 0 3%;
 			margin:0;
 		}
 		.nav__i.cur {
@@ -627,7 +613,7 @@ body {
 
 .optionBox {
 	height:538px;
-	width: 1280px;
+	max-width: 1280px;
 	margin: 0 auto;
 }
 
@@ -635,7 +621,7 @@ body {
 
 .optionItem {
 	float:left;
-	width:480px;
+	width:30%;
 	height:325px;
 	position:relative;
 }
@@ -663,12 +649,10 @@ body {
 			color:#26a9e6;
 		}
 	.optionItem.left {
-		padding:69px 135px 144px 122px;
-		margin: 0 0 0 -100px;
+		padding:69px 10% 144px 10%;
 	}
 	.optionItem.right {
-		padding: 69px 126px 144px 137px;
-		margin: 0 -100px 0 0;
+		padding: 69px 10% 144px 10%;
 	}
 .optionIcon {
 	display:block;
@@ -728,14 +712,13 @@ body {
 ======================*/
 
 .bannerBox {
-	width:1280px;
+	max-width:1280px;
 	margin:0 auto;
 }
 	.bannerBox__i {
 		height:520px;
 		background:url(../i/img/ban.jpg) no-repeat 50% 0;
 		position:relative;
-		margin:0 -100px;
 	}
 	.bannerBox:hover .bannerBox__i {
 		background-position:50% -529px;
@@ -793,15 +776,17 @@ body {
 .addMenu {
 	overflow:hidden;
 	zoom:1;
-	width:1240px;
+	max-width:1240px;
 	margin:72px auto 0;
 }
 	.addMenu ul {
 		float:left;
-		margin: 0 0 0 95px;
+		margin: 0 0 0 7.2%;
+		width: 14%;
 	}
 		.addMenu ul:first-child {
 			margin:0;
+			padding-left: 1%;
 		}
 		.addMenu li {
 			margin: 0 0 8px;
@@ -905,7 +890,7 @@ body {
 }
 .navigation__prod_ii {
 	height:70px;
-	width:1280px;
+	max-width:1280px;
 	margin:0 auto;
 }
 /*===nav__i
@@ -913,7 +898,6 @@ body {
 
 .nav__prod__i {
 	background: #329ed0;
-	margin:0 -100px 0;
 	overflow:hidden;
 	zoom:1;
 	padding:0 0 0 340px;
@@ -939,13 +923,12 @@ body {
 =======================*/
 
 .catalogPage {
-	min-width: 1280px;
+	max-width: 1280px;
 	padding: 0 0 114px;
 	background: url(../i/catalog_f.jpg) repeat-y 50% 0;
 }
 
 .catalogBox {
-	width:1280px;
 	margin:0 auto;
 	padding: 86px 0 0;
 }
@@ -955,7 +938,7 @@ body {
 	width:100%;
 }
 .catalog__ii {
-	margin:0 -23px;
+	/margin:0 -23px;
 }
 
 /*prod__item*/
@@ -966,8 +949,8 @@ body {
 	vertical-align: top;	        
 	zoom: 1;
 	*display: inline;
-	width:393px;
-	margin:0 23px 102px;
+	width: 30%;
+	margin: 0 1.5% 102px;
 	text-decoration:none;
 }
 	.prod__item.prod__item_archiv .prod__descr {
@@ -1047,9 +1030,6 @@ body {
 			background: url(../i/bul.png) no-repeat 0 0;
 			margin:0 9px;
 		}
-			.loader a:hover {
-				background-position: 0 -21px;
-			}
 			.loader a.cur {
 				background-position: 0 -42px;
 			}
@@ -1070,7 +1050,7 @@ body {
 ============================*/
 
 .contentBox {
-	width:1280px;
+	max-width:1280px;
 	margin:0 auto;
 }
 
@@ -1153,7 +1133,6 @@ body {
 ==============*/
 
 .adBox {
-	margin: 129px -100px 0;
 	overflow:hidden;
 	zoom:1;
 }
@@ -1162,10 +1141,10 @@ body {
 }
 
 	.ad__i.max {
-		width:752px;
+		width: 50%;
 	}
 	.ad__i.min {
-		width:728px;
+		width: 50%;
 	}
 	.ad__i.top {
 		height:574px;
@@ -1191,7 +1170,7 @@ body {
 	position:relative;
 }
 	.ad__img img {
-		height:100%;
+		height: 574px;
 		width:100%;
 	}
 	.ad__img_h {
@@ -1209,7 +1188,7 @@ body {
 		}
 .ad__txt {
 	height:100%;
-	padding: 72px 190px 0 118px;
+	padding: 72px 20% 0 18%;
 }
 	.ad__txt .ad__icon {
 		display:block;
@@ -1270,11 +1249,11 @@ body {
 			float:left;
 		}
 			.modelReview .cabinet__i.cab_l {
-				width:535px;
-				margin: 0 85px 0 0;
+				width: 35%;
+				margin: 0 7% 0 0;
 			}
 			.modelReview .cabinet__i.cab_r {
-				width:660px;
+				width: 56%;
 			}
 
 /*descr__model*/
@@ -1394,8 +1373,7 @@ body {
 
 .characteristicsBox {
 	height:377px;
-	margin: 45px -100px 0;
-	padding: 110px 100px 0;
+	padding: 110px 0 0;
 	background:url(../i/catalog_f.jpg) no-repeat 50% 0;
 }
 
@@ -1410,11 +1388,12 @@ body {
 	}
 		.characteristicsBox .cabinet__i.cab_l {
 			float:left;
-			width:560px;
-			padding: 0 94px 0 0;
+			width: 40%;
+			padding: 0 6% 0;
 		}
 		.characteristicsBox .cabinet__i.cab_r {
 			overflow:hidden;
+			width: 48%;
 			zoom:1;
 		}
 
@@ -1515,7 +1494,6 @@ body {
 .featuresBox {
 	min-height:640px;
 	position:relative;
-	margin: 119px 0px 142px -100px;
 	padding:0 100px;
 }
 
@@ -1579,7 +1557,7 @@ body {
 /*featuresBox__i*/
 
 .featuresBox__i {
-	padding:0 320px 0 0;
+	padding: 0 320px 80px 0;
 }
 .features__title {
 	font:30px/30px 'pf_beausans_prosemibold';
@@ -2276,7 +2254,7 @@ body {
 .mainMenu__add_i {
 	position:absolute;
 	top:0;
-	left:50%;
+	left: 680px;
 	margin:0 0 0 -740px;
 	width:1480px;
 	z-index:5;
@@ -2285,7 +2263,7 @@ body {
 }
 	.mainMenu__add_i ul {
 		margin: 0 0 0 343px;
-		width:1280px;
+		max-width:1280px;
 	}
 		.mainMenu__add_i ul li {
 			display: -moz-inline-stack;
@@ -2304,3 +2282,7 @@ body {
 			.mainMenu__add_i li a:hover {
 				background: #1183b8;
 			}
+.loader{display: none;}
+.fotoBox__model .caroufredsel_wrapper{height: 421px !important}
+.loader a.pre-cur {background-position: 0 -21px;}
+.loader a{cursor: default;}
