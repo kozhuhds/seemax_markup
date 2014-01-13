@@ -1,0 +1,16 @@
+@media (max-width: 940px) {
+	.nav__title, .nav__i.cur .nav__title {font: 19px/26px 'pf_beausans_prolight';}
+	.nav__i.cur .nav__title{font-weight: bold;}
+	.slider__ii {height: 440px;}
+}
+@media (max-width: 700px) {
+	.addMenu li a {font: 12px/18px 'pf_beausans_proregular';}
+}
+
+@media (max-width: 1280px) {
+	.modelReview .cabinet__i.cab_l {
+		margin: 0 7% 0 2% !important;
+	}
+	//.ad__i.max{width: 60%;}
+	//.ad__i.max.bot, .ad__i.min.top{width: 40%;}
+}
