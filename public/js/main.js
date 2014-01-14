@@ -224,6 +224,8 @@ $(document).ready(function(){
         var _this = $(this);
         $('.nav__faq li', _this).each(function(i){
             $(this).click(function(){
+                $('.boxDescrCarousel').carouFredSel({scroll:{fx:"fade"}});
+                $('.boxDescrCarousel').trigger('pause');
                 $('.boxDescrCarousel', _this).trigger('slideTo', i);
                 $('.nav__faq li.current', _this).removeClass('current');
                 $(this).addClass('current');
