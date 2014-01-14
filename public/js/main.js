@@ -158,7 +158,7 @@ $(document).ready(function(){
 
      $('.support__i .support__section').each(function(){
         $('.section__title', this).click(function(){
-
+            
             var _service = $(this).parent();
             if (_service.hasClass('cur')){
                 _service.removeClass('cur').find('.section__content').slideUp('slow');
@@ -166,10 +166,12 @@ $(document).ready(function(){
                 $('.cur .section__content').slideUp('slow');
                 $('.cur').removeClass('cur');
                 _service.addClass('cur').find('.section__content').slideDown('slow');
+                var destination = $(this).parent().offset().top;
+                window.scrollTo(0,destination);
             }
+
             return false;
         })
-
     });
 
      //FAQ

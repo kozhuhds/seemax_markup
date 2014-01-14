@@ -1208,7 +1208,7 @@ body {
 	.ad__txt_i {
 		font:18px/27px Arial,sans-serif;
 		color:#fff;
-		margin: 28px 0 65px 7px;
+		margin: 28px 0 8% 7px;
 	}
 		.ad__txt_i a {
 			color:#fff;
@@ -1584,9 +1584,6 @@ body {
 /*=======supportBox
 ====================*/
 
-.supportBox {
-	margin:0 -100px;
-}
 .support__i {
 
 }
@@ -1708,6 +1705,7 @@ body {
 
 .miniBox__faq {
 	margin: 84px 0 0;
+	padding: 0 0 84px 0;
 }
 .title__faq {
 	font:30px/30px 'pf_beausans_probold';
@@ -2283,6 +2281,6 @@ body {
 				background: #1183b8;
 			}
 .loader{display: none;}
-.fotoBox__model .caroufredsel_wrapper{height: 421px !important;width: 662px !important;}
+.fotoBox__model .caroufredsel_wrapper{height: 450px !important;width: 662px !important;}
 .loader a.pre-cur {background-position: 0 -21px;}
 .loader a{cursor: default;}
